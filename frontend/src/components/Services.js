@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 
 function Services() {
   const services = [
@@ -10,24 +9,27 @@ function Services() {
   ];
 
   const handleApplyClick = (serviceTitle) => {
-    // Placeholder for button click logic
     console.log(`Apply clicked for: ${serviceTitle}`);
   };
 
   return (
-    <div className="page">
-      <h1>Our Services</h1>
-      <div className="services-grid">
+    <div className="container mt-5 pt-5">
+      <h1 className="text-center mb-4">Our Services</h1>
+      <div className="row">
         {services.map((service, index) => (
-          <div key={index} className="service-card">
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <button
-              className="apply-button"
-              onClick={() => handleApplyClick(service.title)}
-            >
-              Apply Now
-            </button>
+          <div key={index} className="col-md-6 col-lg-3 mb-4">
+            <div className="card h-100">
+              <div className="card-body">
+                <h5 className="card-title">{service.title}</h5>
+                <p className="card-text">{service.description}</p>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleApplyClick(service.title)}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
