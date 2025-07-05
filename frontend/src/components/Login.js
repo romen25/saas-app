@@ -9,13 +9,11 @@ function Login() {
     let valid = true;
     const newErrors = { email: '', password: '' };
 
-    // Email validation (basic regex)
     if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
       newErrors.email = 'Please enter a valid email address';
       valid = false;
     }
 
-    // Password validation (min 6 characters)
     if (password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters';
       valid = false;
