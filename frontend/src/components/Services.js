@@ -9,6 +9,11 @@ function Services() {
     { title: 'Digital Printing', description: 'High-quality printing for documents and photos.' },
   ];
 
+  const handleApplyClick = (serviceTitle) => {
+    // Placeholder for button click logic
+    console.log(`Apply clicked for: ${serviceTitle}`);
+  };
+
   return (
     <div className="page">
       <h1>Our Services</h1>
@@ -17,6 +22,12 @@ function Services() {
           <div key={index} className="service-card">
             <h3>{service.title}</h3>
             <p>{service.description}</p>
+            <button
+              className="apply-button"
+              onClick={() => handleApplyClick(service.title)}
+            >
+              Apply Now
+            </button>
           </div>
         ))}
       </div>
